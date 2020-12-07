@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "901d555d-42fe-e721-e403-e1cfaa30e73f",
+		"name": "JSON - Void Dev",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "JSON - Void Dev",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "APIKEY F93F052E-E202-4427-AE03-FAD3D5F8D36D"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"TransInfo\": {\r\n\"VerType\": \"V04\",\r\n\"MessType\": \"08\",\r\n\"LocalDateTime\": \"202003300901\",\r\n\"BusDate\": \"200330\",\r\n\"S3MerchID\": \"0071\",\r\n\"RetaiLoc\": \"000000554\",\r\n\"TermID\": \"0001\",\r\n\"TermTranID\": \"202003303300004\",\r\n\"OrderID\": \"\",\r\n\"APLVer\": \"000000\",\r\n\"CurrCde\": \"USD\",\r\n\"S3CardCt\": \"01\",\r\n\"S3RecMess\": \"\",\r\n\"S3ProdCt\": \"001\",\r\n\"S3PurAmt\": \"15.01\",\r\n\"TotalTranAmt\": \"15.01\",\r\n\"TotalTaxAmt\": \"0\",\r\n\"TotalTranDisc\": \"0\",\r\n\"S3TranID\": \"500011209\",\r\n\"ActionCode\": \"0\",\r\n\"CardInfo\": [{\r\n\"BarcodeData\": \"63681102104469828\",\r\n\"CVV\": \"\",\r\n\"POSDataCode\": \"11\"\r\n}]\r\n}\r\n}"
+				},
+				"url": {
+					"raw": "https://servicedev.solutran.com/MessagingServiceV2/S3Auth.svc/process",
+					"protocol": "https",
+					"host": [
+						"servicedev",
+						"solutran",
+						"com"
+					],
+					"path": [
+						"MessagingServiceV2",
+						"S3Auth.svc",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON - Void PROD",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "APIKEY B9C740B8-6375-4CF3-80A8-923130E45D86"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"TransInfo\": {\r\n\"VerType\": \"V04\",\r\n\"MessType\": \"08\",\r\n \"LocalDateTime\": \"202007070814\",\r\n\t  \"BusDate\": \"200707\",\r\n\t  \"S3MerchID\": \"8710\",\r\n\t  \"RetaiLoc\": \"0000000554\",\r\n\t  \"TermID\": \"0012\",\r\n\t  \"TermTranID\": \"2020070703300004\",\r\n\"OrderID\": \"\",\r\n\"APLVer\": \"000000\",\r\n\"CurrCde\": \"USD\",\r\n\"S3CardCt\": \"01\",\r\n\"S3RecMess\": \"\",\r\n\"S3ProdCt\": \"002\",\r\n\"S3PurAmt\": \"3.50\",\r\n\"TotalTranAmt\": \"3.50\",\r\n\"TotalTaxAmt\": \"0\",\r\n\"TotalTranDisc\": \"0\",\r\n\"S3TranID\": \"231203696\",\r\n\"ActionCode\": \"0\",\r\n\"CardInfo\": [{\r\n\"BarcodeData\": \"63681100144443241\",\r\n\"CVV\": \"\",\r\n\"POSDataCode\": \"11\"\r\n}]\r\n}\r\n}"
+				},
+				"url": {
+					"raw": "https://s3global.solutranservices.com/MessagingServicev4/S3Auth.svc/process",
+					"protocol": "https",
+					"host": [
+						"s3global",
+						"solutranservices",
+						"com"
+					],
+					"path": [
+						"MessagingServicev4",
+						"S3Auth.svc",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON - Void ML Dev",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "APIKEY F93F052E-E202-4427-AE03-FAD3D5F8D36D"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"TransInfo\": {\r\n\"VerType\": \"V04\",\r\n\"MessType\": \"08\",\r\n\"LocalDateTime\": \"202003300901\",\r\n\"BusDate\": \"200330\",\r\n\"S3MerchID\": \"1138\",\r\n\"RetaiLoc\": \"0000000797\",\r\n\"TermID\": \"0001\",\r\n\"TermTranID\": \"202003303300002\",\r\n\"OrderID\": \"\",\r\n\"APLVer\": \"000000\",\r\n\"CurrCde\": \"USD\",\r\n\"S3CardCt\": \"01\",\r\n\"S3RecMess\": \"\",\r\n\"S3ProdCt\": \"001\",\r\n\"S3PurAmt\": \"2.00\",\r\n\"TotalTranAmt\": \"2.00\",\r\n\"TotalTaxAmt\": \"0\",\r\n\"TotalTranDisc\": \"0\",\r\n\"S3TranID\": \"500011376\",\r\n\"ActionCode\": \"0\",\r\n\"CardInfo\": [{\r\n\"BarcodeData\": \"63681102103117006\",\r\n\"CVV\": \"\",\r\n\"POSDataCode\": \"11\"\r\n}]\r\n}\r\n}"
+				},
+				"url": {
+					"raw": "https://servicedev.solutran.com/MessagingServiceV2/S3Auth.svc/process",
+					"protocol": "https",
+					"host": [
+						"servicedev",
+						"solutran",
+						"com"
+					],
+					"path": [
+						"MessagingServiceV2",
+						"S3Auth.svc",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON - Void CVS Dev",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "APIKEY F93F052E-E202-4427-AE03-FAD3D5F8D36D"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"TransInfo\": {\r\n\"VerType\": \"V04\",\r\n\"MessType\": \"08\",\r\n\"LocalDateTime\": \"202005210901\",\r\n\"BusDate\": \"200521\",\r\n\"S3MerchID\": \"76\",\r\n\"RetaiLoc\": \"000000554\",\r\n\"TermID\": \"0001\",\r\n\"TermTranID\": \"2020052103300003\",\r\n\"OrderID\": \"\",\r\n\"APLVer\": \"000000\",\r\n\"CurrCde\": \"USD\",\r\n\"S3CardCt\": \"01\",\r\n\"S3RecMess\": \"\",\r\n\"S3ProdCt\": \"001\",\r\n\"S3PurAmt\": \"2.00\",\r\n\"TotalTranAmt\": \"2.00\",\r\n\"TotalTaxAmt\": \"0\",\r\n\"TotalTranDisc\": \"0\",\r\n\"S3TranID\": \"500015325\",\r\n\"ActionCode\": \"0\",\r\n\"CardInfo\": [{\r\n\"BarcodeData\": \"63681102103117881\",\r\n\"CVV\": \"\",\r\n\"POSDataCode\": \"11\"\r\n}]\r\n}\r\n}"
+				},
+				"url": {
+					"raw": "https://servicedev.solutran.com/MessagingServiceV2/S3Auth.svc/process",
+					"protocol": "https",
+					"host": [
+						"servicedev",
+						"solutran",
+						"com"
+					],
+					"path": [
+						"MessagingServiceV2",
+						"S3Auth.svc",
+						"process"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

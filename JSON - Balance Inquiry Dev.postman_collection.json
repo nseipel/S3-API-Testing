@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "cd3b7ac3-df28-43f8-ca9e-e12de395e99f",
+		"name": "JSON - Balance Inquiry Dev",
+		"description": "JSON - Balance Inquiry Dev",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "JSON - Balance Inquiry Dev",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "APIKEY F93F052E-E202-4427-AE03-FAD3D5F8D36D"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"TransInfo\": {\r\n\"VerType\": \"V04\",\r\n\"MessType\": \"07\",\r\n\"LocalDateTime\": \"202005280051\",\r\n\"BusDate\": \"200528\",\r\n\"S3MerchID\": \"761\",\r\n\"RetaiLoc\": \"000000554\",\r\n\"TermID\": \"0012\",\r\n\"TermTranID\": \"2020052803300001\",\r\n\"OrderID\": \"01234567890\",\r\n\"APLVer\": \"000000\",\r\n\"CurrCde\": \"USD\",\r\n\"S3CardCt\": \"01\",\r\n\"S3RecMess\": \"00\",\r\n\"S3ProdCt\": \"002\",\r\n\"S3PurAmt\": \"0\",\r\n\"TotalTranAmt\": \"0\",\r\n\"TotalTaxAmt\": \"0\",\r\n\"TotalTranDisc\": \"0\",\r\n\"S3TranID\": \"0\",\r\n\"ActionCode\": \"0\",\r\n\"CardInfo\": [{\r\n\"BarcodeData\": \"63681102103117881\",\r\n\"CVV\": \"\",\r\n\"POSDataCode\": \"11\"\r\n}]\r\n}\r\n} \r\n"
+				},
+				"url": {
+					"raw": "https://servicedev.solutran.com/MessagingServiceV2/S3Auth.svc/process",
+					"protocol": "https",
+					"host": [
+						"servicedev",
+						"solutran",
+						"com"
+					],
+					"path": [
+						"MessagingServiceV2",
+						"S3Auth.svc",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON - Balance Inquiry Dev copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "APIKEY F93F052E-E202-4427-AE03-FAD3D5F8D36D"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"TransInfo\": {\r\n\"VerType\": \"V03\",\r\n\"MessType\": \"07\",\r\n\"LocalDateTime\": \"201904111800\",\r\n\"BusDate\": \"190411\",\r\n\"S3MerchID\": \"71\",\r\n\"RetaiLoc\": \"000000554\",\r\n\"TermID\": \"0012\",\r\n\"TermTranID\": \"1234123412341234\",\r\n\"OrderID\": \"01234567890\",\r\n\"APLVer\": \"000000\",\r\n\"CurrCde\": \"USD\",\r\n\"S3CardCt\": \"01\",\r\n\"S3RecMess\": \"00\",\r\n\"S3ProdCt\": \"002\",\r\n\"S3PurAmt\": \"0\",\r\n\"TotalTranAmt\": \"0\",\r\n\"TotalTaxAmt\": \"0\",\r\n\"TotalTranDisc\": \"0\",\r\n\"S3TranID\": \"0\",\r\n\"ActionCode\": \"0\",\r\n\"CardInfo\": [{\r\n\"BarcodeData\": \"63681102103117881\",\r\n\"CVV\": \"49014\",\r\n\"POSDataCode\": \"11\"\r\n}]\r\n}\r\n} \r\n"
+				},
+				"url": {
+					"raw": "https://servicedev.solutran.com/MessagingServiceV2/S3Auth.svc/process",
+					"protocol": "https",
+					"host": [
+						"servicedev",
+						"solutran",
+						"com"
+					],
+					"path": [
+						"MessagingServiceV2",
+						"S3Auth.svc",
+						"process"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
