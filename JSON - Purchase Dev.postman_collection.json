@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "c89fa3e5-7d96-4849-adb3-72907c8788ff",
+		"name": "JSON - Purchase Dev",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "JSON - Purchase Dotcom",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "APIKEY F93F052E-E202-4427-AE03-FAD3D5F8D36D"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"TransInfo\":{  \r\n      \"VerType\":\"V04\",\r\n      \"MessType\":\"01\",\r\n      \"LocalDateTime\":\"202005291152\",\r\n      \"BusDate\":\"200529\",\r\n      \"S3MerchID\":\"0072\",\r\n      \"RetaiLoc\":\"0000000797\",\r\n      \"TermID\":\"0001\",\r\n      \"TermTranID\":\"2020052903300001\",\r\n      \"OrderID\":\"\",\r\n      \"APLVer\":\"0\",\r\n      \"CurrCde\":\"USD\",\r\n      \"S3CardCt\":\"01\",\r\n      \"S3RecMess\":\"\",\r\n      \"S3ProdCt\":\"002\",\r\n      \"S3PurAmt\":\"1.50\",\r\n      \"TotalTranAmt\":\"1.50\",\r\n      \"TotalTaxAmt\":\"0.00\",\r\n      \"TotalTranDisc\":\"0\",\r\n      \"S3TranID\":\"0\",\r\n      \"ActionCode\":\"0\",\r\n      \"CardInfo\":[  \r\n         {  \r\n            \"BarcodeData\":\"63681102103769830\",\r\n            \"CVV\": \"\",\r\n            \"POSDataCode\":\"11\"\r\n         }\r\n      ],\r\n       \"ProductInfo\": [\r\n    {\r\n      \"ProdCode\": \"P0000000002293\",\r\n      \"ProdLevel\": \"0\",\r\n      \"Depart\": \"1\",\r\n      \"OrdinalNum\": \"0\",\r\n      \"PurchAmt\": \"1.50\",\r\n      \"NonS3DiscAmt\": \"0.00\",\r\n      \"TaxAmt\": \"0.00\",\r\n      \"QuantityType\": \"U\",\r\n      \"PurQuantity\": \"1\"\r\n    }\r\n      ]\r\n}\r\n} "
+				},
+				"url": {
+					"raw": "https://servicedev.solutran.com/MessagingServiceV2/S3Auth.svc/process",
+					"protocol": "https",
+					"host": [
+						"servicedev",
+						"solutran",
+						"com"
+					],
+					"path": [
+						"MessagingServiceV2",
+						"S3Auth.svc",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Json - Purchase Walmart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "APIKEY F93F052E-E202-4427-AE03-FAD3D5F8D36D"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"TransInfo\":{  \r\n      \"VerType\":\"V04\",\r\n      \"MessType\":\"01\",\r\n      \"LocalDateTime\":\"202005270900\",\r\n      \"BusDate\":\"200527\",\r\n      \"S3MerchID\":\"71\",\r\n      \"RetaiLoc\":\"000000554\",\r\n      \"TermID\":\"0001\",\r\n      \"TermTranID\":\"2020052700003\",\r\n      \"OrderID\":\"\",\r\n      \"APLVer\":\"0\",\r\n      \"CurrCde\":\"USD\",\r\n      \"S3CardCt\":\"01\",\r\n      \"S3RecMess\":\"\",\r\n      \"S3ProdCt\":\"002\",\r\n      \"S3PurAmt\":\"1.00\",\r\n      \"TotalTranAmt\":\"10.00\",\r\n      \"TotalTaxAmt\":\"0.00\",\r\n      \"TotalTranDisc\":\"0\",\r\n      \"S3TranID\":\"0\",\r\n      \"ActionCode\":\"0\",\r\n      \"CardInfo\":[  \r\n         {  \r\n            \"BarcodeData\":\"63681102103117881\",\r\n            \"CVV\": \"\",\r\n            \"POSDataCode\":\"11\"\r\n         }\r\n      ],\r\n       \"ProductInfo\": [\r\n    {\r\n      \"ProdCode\": \"P0000000002299\",\r\n      \"ProdLevel\": \"0\",\r\n      \"Depart\": \"1\",\r\n      \"OrdinalNum\": \"0\",\r\n      \"PurchAmt\": \"1.00\",\r\n      \"NonS3DiscAmt\": \"0.00\",\r\n      \"TaxAmt\": \"0.00\",\r\n      \"QuantityType\": \"U\",\r\n      \"PurQuantity\": \"1\"\r\n    }\r\n  ]\r\n}\r\n} "
+				},
+				"url": {
+					"raw": "https://servicedev.solutran.com/MessagingServiceV2/S3Auth.svc/process",
+					"protocol": "https",
+					"host": [
+						"servicedev",
+						"solutran",
+						"com"
+					],
+					"path": [
+						"MessagingServiceV2",
+						"S3Auth.svc",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON - Purchase CVS Dev",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "APIKEY F93F052E-E202-4427-AE03-FAD3D5F8D36D"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"TransInfo\":{  \r\n      \"VerType\":\"V04\",\r\n      \"MessType\":\"07\",\r\n      \"LocalDateTime\":\"202005210901\",\r\n      \"BusDate\":\"200521\",\r\n      \"S3MerchID\":\"76\",\r\n      \"RetaiLoc\":\"000000554\",\r\n      \"TermID\":\"0001\",\r\n      \"TermTranID\":\"202052103300001\",\r\n      \"OrderID\":\"\",\r\n      \"APLVer\":\"0\",\r\n      \"CurrCde\":\"USD\",\r\n      \"S3CardCt\":\"01\",\r\n      \"S3RecMess\":\"\",\r\n      \"S3ProdCt\":\"002\",\r\n      \"S3PurAmt\":\"2.00\",\r\n      \"TotalTranAmt\":\"2.00\",\r\n      \"TotalTaxAmt\":\"0.00\",\r\n      \"TotalTranDisc\":\"0\",\r\n      \"S3TranID\":\"0\",\r\n      \"ActionCode\":\"0\",\r\n      \"CardInfo\":[  \r\n         {  \r\n            \"BarcodeData\":\"63681102103117881\",\r\n            \"CVV\": \"\",\r\n            \"POSDataCode\":\"11\"\r\n         }\r\n      ],\r\n       \"ProductInfo\": [\r\n    {\r\n      \"ProdCode\": \"00068113107102\",\r\n      \"ProdLevel\": \"0\",\r\n      \"Depart\": \"1\",\r\n      \"OrdinalNum\": \"0\",\r\n      \"PurchAmt\": \"2.00\",\r\n      \"NonS3DiscAmt\": \"0.00\",\r\n      \"TaxAmt\": \"0.00\",\r\n      \"QuantityType\": \"U\",\r\n      \"PurQuantity\": \"1\"\r\n    }\r\n  ]\r\n}\r\n} "
+				},
+				"url": {
+					"raw": "https://servicedev.solutran.com/MessagingServiceV2/S3Auth.svc/process",
+					"protocol": "https",
+					"host": [
+						"servicedev",
+						"solutran",
+						"com"
+					],
+					"path": [
+						"MessagingServiceV2",
+						"S3Auth.svc",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON - Purchase walgreens Dev",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "APIKEY F93F052E-E202-4427-AE03-FAD3D5F8D36D"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"TransInfo\":{  \r\n      \"VerType\":\"V04\",\r\n      \"MessType\":\"01\",\r\n      \"LocalDateTime\":\"202003270901\",\r\n      \"BusDate\":\"200327\",\r\n      \"S3MerchID\":\"82\",\r\n      \"RetaiLoc\":\"000000554\",\r\n      \"TermID\":\"0001\",\r\n      \"TermTranID\":\"202003273300032\",\r\n      \"OrderID\":\"\",\r\n      \"APLVer\":\"0\",\r\n      \"CurrCde\":\"USD\",\r\n      \"S3CardCt\":\"01\",\r\n      \"S3RecMess\":\"\",\r\n      \"S3ProdCt\":\"002\",\r\n      \"S3PurAmt\":\"5.20\",\r\n      \"TotalTranAmt\":\"5.20\",\r\n      \"TotalTaxAmt\":\"0.00\",\r\n      \"TotalTranDisc\":\"0\",\r\n      \"S3TranID\":\"0\",\r\n      \"ActionCode\":\"0\",\r\n      \"CardInfo\":[  \r\n         {  \r\n            \"BarcodeData\":\"63681102101130340\",\r\n            \"CVV\": \"\",\r\n            \"POSDataCode\":\"11\"\r\n         }\r\n      ],\r\n       \"ProductInfo\": [\r\n    {\r\n      \"ProdCode\": \"00068113107102\",\r\n      \"ProdLevel\": \"0\",\r\n      \"Depart\": \"1\",\r\n      \"OrdinalNum\": \"0\",\r\n      \"PurchAmt\": \"4.20\",\r\n      \"NonS3DiscAmt\": \"0.00\",\r\n      \"TaxAmt\": \"0.00\",\r\n      \"QuantityType\": \"U\",\r\n      \"PurQuantity\": \"1\"\r\n    }\r\n  ]\r\n}\r\n} "
+				},
+				"url": {
+					"raw": "https://servicedev.solutran.com/MessagingServiceV2/S3Auth.svc/process",
+					"protocol": "https",
+					"host": [
+						"servicedev",
+						"solutran",
+						"com"
+					],
+					"path": [
+						"MessagingServiceV2",
+						"S3Auth.svc",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON - Purchase ML Dev",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "APIKEY F93F052E-E202-4427-AE03-FAD3D5F8D36D"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"TransInfo\":{  \r\n      \"VerType\":\"V04\",\r\n      \"MessType\":\"01\",\r\n      \"LocalDateTime\":\"202003300901\",\r\n      \"BusDate\":\"200330\",\r\n      \"S3MerchID\":\"2175\",\r\n      \"RetaiLoc\":\"0000000671\",\r\n      \"TermID\":\"0001\",\r\n      \"TermTranID\":\"20200303300001\",\r\n      \"OrderID\":\"\",\r\n      \"APLVer\":\"0\",\r\n      \"CurrCde\":\"USD\",\r\n      \"S3CardCt\":\"01\",\r\n      \"S3RecMess\":\"\",\r\n      \"S3ProdCt\":\"002\",\r\n      \"S3PurAmt\":\"4.60\",\r\n      \"TotalTranAmt\":\"4.60\",\r\n      \"TotalTaxAmt\":\"0.00\",\r\n      \"TotalTranDisc\":\"0\",\r\n      \"S3TranID\":\"0\",\r\n      \"ActionCode\":\"0\",\r\n      \"CardInfo\":[  \r\n         {  \r\n            \"BarcodeData\":\"63681102101130340\",\r\n            \"CVV\": \"\",\r\n            \"POSDataCode\":\"11\"\r\n         }\r\n      ],\r\n       \"ProductInfo\": [\r\n    {\r\n      \"ProdCode\": \"00068113107102\",\r\n      \"ProdLevel\": \"0\",\r\n      \"Depart\": \"1\",\r\n      \"OrdinalNum\": \"0\",\r\n      \"PurchAmt\": \"4.60\",\r\n      \"NonS3DiscAmt\": \"0.00\",\r\n      \"TaxAmt\": \"0.00\",\r\n      \"QuantityType\": \"U\",\r\n      \"PurQuantity\": \"1\"\r\n    }\r\n  ]\r\n}\r\n} "
+				},
+				"url": {
+					"raw": "https://servicedev.solutran.com/MessagingServiceV2/S3Auth.svc/process",
+					"protocol": "https",
+					"host": [
+						"servicedev",
+						"solutran",
+						"com"
+					],
+					"path": [
+						"MessagingServiceV2",
+						"S3Auth.svc",
+						"process"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
