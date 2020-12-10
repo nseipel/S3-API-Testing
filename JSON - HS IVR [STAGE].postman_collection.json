@@ -1,0 +1,649 @@
+{
+	"info": {
+		"_postman_id": "37471e64-e19e-4008-bbb6-4e8392d6fff3",
+		"name": "JSON - HS IVR [STAGE]",
+		"description": "This is a folder for the HS IVR JSON messages",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Site Availabillity",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://s3globaltest.solutranservices.com/ivrservice/api/cardholder/test",
+					"protocol": "https",
+					"host": [
+						"s3globaltest",
+						"solutranservices",
+						"com"
+					],
+					"path": [
+						"ivrservice",
+						"api",
+						"cardholder",
+						"test"
+					]
+				},
+				"description": "Tests if site is up (returns \"Success\")"
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1e6e63d3-f479-4d1c-8b08-7ddc5b1631e0",
+						"exec": [
+							"// example using response assertions\r",
+							"pm.test(\"response should be okay to process\", function () { \r",
+							"    pm.response.to.not.be.error; \r",
+							"    pm.response.to.have.jsonBody(\"\"); \r",
+							"    pm.response.to.not.have.jsonBody(\"error\"); \r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"benefit response\", function(){\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.card.benefits[0].benefitBalance).to.eql(100);\r",
+							"});\r",
+							"    \r",
+							"    \r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DialedNumber\": \"9524449779\",\r\n    \"LookupType\": \"01\",\r\n    \"LookupValues\": [\r\n        {\r\n            \"Name\": \"01\",\r\n            \"Value\": \"6515283560\"\r\n        }\r\n    ],\r\n    \"ANI\": \"6515283560\",\r\n    \"CallID\": \"8888078\",\r\n    \"TXNDateTime\": \"07-26-2019T08:19:28\",\r\n    \"ClientCode\": null,\r\n    \"ProductCode\": \"11\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://s3globaltest.solutranservices.com/ivrservice/api/cardholder/validatecard",
+					"protocol": "https",
+					"host": [
+						"s3globaltest",
+						"solutranservices",
+						"com"
+					],
+					"path": [
+						"ivrservice",
+						"api",
+						"cardholder",
+						"validatecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BeginInteraction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dialedNumber\": \"9524449779\",\r\n  \"application\": \"IVR\",\r\n  \"ani\": \"5134022990\",\r\n  \"ipAddress\": null,\r\n  \"callID\": null,\r\n  \"txnDateTime\": \"10-04-2019T13:55:28\",\r\n  \"clientCode\": null,\r\n  \"productCode\": \"11\",\r\n  \"appCallName\": null,\r\n  \"appUserName\": null\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://s3globaltest.solutranservices.com/ivrservice/api/cardholder/BeginInteraction",
+					"protocol": "https",
+					"host": [
+						"s3globaltest",
+						"solutranservices",
+						"com"
+					],
+					"path": [
+						"ivrservice",
+						"api",
+						"cardholder",
+						"BeginInteraction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activate Card",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DialedNumber\": \"9524449773\",\r\n    \"CardNumber\": \"63681102100129186\",\r\n    \"SecurityCode\": null,\r\n    \"MemberID\": \"\",\r\n    \"ReasonCode\": \"01\",\r\n    \"CallID\": \"18\",\r\n    \"TXNDateTime\": null,\r\n    \"ClientCode\": \"\",\r\n    \"ProductCode\": \"11\"\r\n}\r\n",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://servicedev.solutran.com/IVRWEBAPI/api/Cardholder/ActivateCard",
+					"protocol": "http",
+					"host": [
+						"servicedev",
+						"solutran",
+						"com"
+					],
+					"path": [
+						"IVRWEBAPI",
+						"api",
+						"Cardholder",
+						"ActivateCard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update (replace) card",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DialedNumber\": \"9524449779\",\r\n    \"CardNumber\": \"63681102100326543\",\r\n    \"SecurityCode\": null,\r\n    \"MemberID\": \"\",\r\n    \"ReasonCode\": \"02\",\r\n    \"CallID\": \"88880002\",\r\n    \"TXNDateTime\": \"07-19-2019T08:35:28\",\r\n    \"ClientCode\": \"\",\r\n    \"ProductCode\": \"11\"\r\n}\r\n",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://s3globaltest.solutranservices.com/ivrservice/api/Cardholder/UpdateCard",
+					"protocol": "https",
+					"host": [
+						"s3globaltest",
+						"solutranservices",
+						"com"
+					],
+					"path": [
+						"ivrservice",
+						"api",
+						"Cardholder",
+						"UpdateCard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Account cardnumber",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "16fc191a-726c-4738-8cfa-a2fcade3c1b4",
+						"exec": [
+							"// example using response assertions\r",
+							"pm.test(\"response should be okay to process\", function () { \r",
+							"    pm.response.to.not.be.error; \r",
+							"    pm.response.to.have.jsonBody(\"\"); \r",
+							"    pm.response.to.not.have.jsonBody(\"error\"); \r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"benefit response\", function(){\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.card.benefits[0].benefitBalance).to.eql(100);\r",
+							"});\r",
+							"    \r",
+							"pm.test(\"pan length\", function(){\r",
+							"    var jsonData2=pm.response.json();\r",
+							"    const regex = /^[0-9]{17}$/;\r",
+							"    const str = jsonData2.card.mostRecentCardNumber;\r",
+							"    if ((m = regex.exec(str)) !== null) {\r",
+							"    // The result can be accessed through the `m`-variable.\r",
+							"    m.forEach((match, groupIndex) => {\r",
+							"        console.log(`Found match, group ${groupIndex}: ${match}`);\r",
+							"    });\r",
+							"}\r",
+							"    pm.expect().to.eql(100);\r",
+							"})\r",
+							"    \r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"ProductCode\": \"11\", \"LookupType\": \"03\", \"CallID\": \"Your Current Schrute Bucks balance of 150 dollars and 0 cents of which 120 dollars and 0 cents expires on March 25 2020. Your next distribution of 400 dollars and 57 cents will be on December 4 2019. Your Current O T C benefits plus balance of 150 dollars and 0 cents of which 120 dollars and 0 cents expires on March 25 2020. Your next distribution of 400 dollars and 57 cents will be on December 4 2019. Your Current taco Tuesday balance of 420 tacos of which expiring 7 expires on February  25 1992. Your next distribution of 12 will be on September 21 2021.For your complete account balances visit healthy benefits plus DOT com or use the Healthy Benefits Plus App.\",\n\"DialedNumber\": \"7632751314\", \"ANI\": \"7635197200\", \"ClientCode\": null, \"LookupValues\": [{\"Name\": \"03\", \"Value\": \"63681102200200978\"}], \"TXNDateTime\": \"October-2-2019T11:12\"}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://servicedev.solutran.com/IVRWEBAPI/api/Cardholder/ValidateCard",
+					"protocol": "http",
+					"host": [
+						"servicedev",
+						"solutran",
+						"com"
+					],
+					"path": [
+						"IVRWEBAPI",
+						"api",
+						"Cardholder",
+						"ValidateCard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Account Alternate Lookup",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bdba46b9-06e0-4f48-9779-814acd59b8cf",
+						"exec": [
+							"// example using response assertions\r",
+							"pm.test(\"response should be okay to process\", function () { \r",
+							"    pm.response.to.not.be.error; \r",
+							"    pm.response.to.have.jsonBody(\"\"); \r",
+							"    pm.response.to.not.have.jsonBody(\"error\"); \r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"benefit response\", function(){\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.card.benefits[0].benefitBalance).to.eql(100);\r",
+							"});\r",
+							"    \r",
+							"pm.test(\"pan length\", function(){\r",
+							"    var jsonData2=pm.response.json();\r",
+							"    const regex = /^[0-9]{17}$/;\r",
+							"    const str = jsonData2.card.mostRecentCardNumber;\r",
+							"    if ((m = regex.exec(str)) !== null) {\r",
+							"    // The result can be accessed through the `m`-variable.\r",
+							"    m.forEach((match, groupIndex) => {\r",
+							"        console.log(`Found match, group ${groupIndex}: ${match}`);\r",
+							"    });\r",
+							"}\r",
+							"    pm.expect().to.eql(100);\r",
+							"})\r",
+							"    \r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DialedNumber\": \"9524449779\",\r\n    \"LookupType\": \"03\",\r\n    \"LookupValues\": [\r\n        {\r\n            \"Name\": \"03\",\r\n            \"Value\": \"63681102000025021\"\r\n        }\r\n    ],\r\n    \"ANI\": \"5134022990\",\r\n    \"CallID\": \"8888078\",\r\n    \"TXNDateTime\": \"07-26-2019T08:19:28\",\r\n    \"ClientCode\": null,\r\n    \"ProductCode\": \"11\"\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://s3globaltest.solutranservices.com/ivrservice/api/cardholder/validatecard",
+					"protocol": "https",
+					"host": [
+						"s3globaltest",
+						"solutranservices",
+						"com"
+					],
+					"path": [
+						"ivrservice",
+						"api",
+						"cardholder",
+						"validatecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CallHandoff",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bc0c5a4e-2aeb-4f77-bdc7-74e8e36709cb",
+						"exec": [
+							"// example using response assertions\r",
+							"pm.test(\"response should be okay to process\", function () { \r",
+							"    pm.response.to.not.be.error; \r",
+							"    pm.response.to.have.jsonBody(\"\"); \r",
+							"    pm.response.to.not.have.jsonBody(\"error\"); \r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"benefit response\", function(){\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.card.benefits[0].benefitBalance).to.eql(100);\r",
+							"});\r",
+							"    \r",
+							"pm.test(\"pan length\", function(){\r",
+							"    var jsonData2=pm.response.json();\r",
+							"    const regex = /^[0-9]{17}$/;\r",
+							"    const str = jsonData2.card.mostRecentCardNumber;\r",
+							"    if ((m = regex.exec(str)) !== null) {\r",
+							"    // The result can be accessed through the `m`-variable.\r",
+							"    m.forEach((match, groupIndex) => {\r",
+							"        console.log(`Found match, group ${groupIndex}: ${match}`);\r",
+							"    });\r",
+							"}\r",
+							"    pm.expect().to.eql(100);\r",
+							"})\r",
+							"    \r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cardNumber\": \"63681103600000059\",\r\n  \"memberID\": 1941694,\r\n  \"dialedNumber\": \"9524449779\",\r\n  \"ani\": \"5134022990\",\r\n  \"languageSelected\": \"ENG\",\r\n  \"exitPoint\": \"99\",\r\n  \"securityVerification\": [\r\n    {\r\n      \"name\": \"01\",\r\n      \"value\": \"N\"\r\n    },\r\n{\r\n      \"name\": \"11\",\r\n      \"value\": \"N\"\r\n    },\r\n    {\r\n      \"name\": \"12\",\r\n      \"value\": \"N\"\r\n    }\r\n  ],\r\n  \"callID\": \"1120191029133346163420\",\r\n  \"txnDateTime\":  \"10-04-2019T14:55:28\",\r\n  \"clientCode\": null,\r\n  \"productCode\": \"11\",\r\n  \"appCallName\": \"IVR\",\r\n  \"appUserName\": uhc-catalogonly@solutran.com\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "Configuration.ServiceUrl + $\"/merchant/merchant-report?reportDate={ date.ToShortDateString() }&terminalId={terminalId}&merchantId={merchantId}&retailerLocation={retailerLocation}\";",
+					"host": [
+						"Configuration",
+						"ServiceUrl + $\""
+					],
+					"path": [
+						"merchant",
+						"merchant-report"
+					],
+					"query": [
+						{
+							"key": "reportDate",
+							"value": "{ date.ToShortDateString() }"
+						},
+						{
+							"key": "terminalId",
+							"value": "{terminalId}"
+						},
+						{
+							"key": "merchantId",
+							"value": "{merchantId}"
+						},
+						{
+							"key": "retailerLocation",
+							"value": "{retailerLocation}\";"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RequestCatalog",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4c26ac9-b54f-4e20-9817-760a3f5b3838",
+						"exec": [
+							"// example using response assertions\r",
+							"pm.test(\"response should be okay to process\", function () { \r",
+							"    pm.response.to.not.be.error; \r",
+							"    pm.response.to.have.jsonBody(\"\"); \r",
+							"    pm.response.to.not.have.jsonBody(\"error\"); \r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"benefit response\", function(){\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.card.benefits[0].benefitBalance).to.eql(100);\r",
+							"});\r",
+							"    \r",
+							"pm.test(\"pan length\", function(){\r",
+							"    var jsonData2=pm.response.json();\r",
+							"    const regex = /^[0-9]{17}$/;\r",
+							"    const str = jsonData2.card.mostRecentCardNumber;\r",
+							"    if ((m = regex.exec(str)) !== null) {\r",
+							"    // The result can be accessed through the `m`-variable.\r",
+							"    m.forEach((match, groupIndex) => {\r",
+							"        console.log(`Found match, group ${groupIndex}: ${match}`);\r",
+							"    });\r",
+							"}\r",
+							"    pm.expect().to.eql(100);\r",
+							"})\r",
+							"    \r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dialedNumber\": \"9524449773\",\r\n  \"cardNumber\": \"55555503500006580\",\r\n  \"memberID\": null,\r\n  \"cardID\": null,\r\n  \"callID\": \"88880001\",\r\n  \"txnDateTime\": \"September-26-2019T20:19\",\r\n  \"clientCode\": null,\r\n  \"productCode\": \"11\",\r\n  \"appCallName\": \"IVR\",\r\n  \"appUserName\": null\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://s3globaltest.solutranservices.com/ivrservice/api/cardholder/RequestCatalog",
+					"protocol": "https",
+					"host": [
+						"s3globaltest",
+						"solutranservices",
+						"com"
+					],
+					"path": [
+						"ivrservice",
+						"api",
+						"cardholder",
+						"RequestCatalog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Route Call",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "693e28e9-202e-4855-a42f-57861f640be4",
+						"exec": [
+							"// example using response assertions\r",
+							"pm.test(\"response should be okay to process\", function () { \r",
+							"    pm.response.to.not.be.error; \r",
+							"    pm.response.to.have.jsonBody(\"\"); \r",
+							"    pm.response.to.not.have.jsonBody(\"error\"); \r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"benefit response\", function(){\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.card.benefits[0].benefitBalance).to.eql(100);\r",
+							"});\r",
+							"    \r",
+							"pm.test(\"pan length\", function(){\r",
+							"    var jsonData2=pm.response.json();\r",
+							"    const regex = /^[0-9]{17}$/;\r",
+							"    const str = jsonData2.card.mostRecentCardNumber;\r",
+							"    if ((m = regex.exec(str)) !== null) {\r",
+							"    // The result can be accessed through the `m`-variable.\r",
+							"    m.forEach((match, groupIndex) => {\r",
+							"        console.log(`Found match, group ${groupIndex}: ${match}`);\r",
+							"    });\r",
+							"}\r",
+							"    pm.expect().to.eql(100);\r",
+							"})\r",
+							"    \r",
+							"    \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"memberId\": null,\r\n  \"dialedNumber\": \"9524449779\",\r\n  \"ani\": \"5134022990\",\r\n  \"languageSelected\": \"ENG\",\r\n  \"exitPoint\": \"01\",\r\n  \"cardNumber\": \"63681102200200978t\",\r\n  \"cardId\": null,\r\n  \"callId\": 1120191014132000543989,\r\n  \"txnDateTime\": \"07-26-2019T08:19:28\",\r\n  \"clientCode\": null,\r\n  \"productCode\": \"11\",\r\n   \"appCallName\": \"IVR\",\r\n  \"appUserName\": null\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://s3globaltest.solutranservices.com/ivrservice/api/Cardholder/RouteCall",
+					"protocol": "https",
+					"host": [
+						"s3globaltest",
+						"solutranservices",
+						"com"
+					],
+					"path": [
+						"ivrservice",
+						"api",
+						"Cardholder",
+						"RouteCall"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJJVlItSW50ZWxlUGVlciIsImlzcyI6Imh0dHBzOi8vaWQuc29sdXRyYW4uY29tL3N0YXRpYyIsImF1ZCI6IjFhZmY3NTgxLWI1NmUtNDE4Ny1iOTc0LTUyYTI1MzI3MTdjNiIsIm5vbmNlIjoiWlJiNU1pQmszT1k9IiwiYXV0aF90aW1lIjoxNTY5NTA2OTAzLCJleHAiOjIwNzQ0Mjg1MDMsImlhdCI6MTU2OTUwNjkwM30.wV3km5zCPpi4W2WfWtJlttWum8nl-iS7AQrGlANdtgg",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e1af17e7-c238-4837-810d-6b941e36edbf",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "52185858-39e6-4ba9-be38-7e55d7edd73d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
