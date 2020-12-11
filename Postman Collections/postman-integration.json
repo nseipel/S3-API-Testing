@@ -1,0 +1,75 @@
+{
+  "info": {
+    "_postman_id": "3cf7e66c-fef4-4a77-9bcb-ee81b72f00b8",
+    "name": "S3 V3 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Purchase",
+      "_postman_id": "18129678-d236-4cc7-a59a-684bc794a91c",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "bearer WeHSf0KQVoT4FFSjedL7mheAXbbuY8d1-DEtk_DIcs8BRbsptxllUP97eerv65VmlGyEWbELUggsa2ZcfmDOkPYvQlDN3a1HQ1rRjvkGdS3L20zeRJpYGxnAenRa4wPf_yMYvFeXWGjGMI_VF3Ct9NNJO67mjCQ0CPXFIFUaiBfbolW7E5EnQFz4eiHuiq0XbqfycNQT0Yd5PYF4T_N82Dp2iS_kCJqlIqTY_aMF4jB0ozHPrFUlZzlTWmKlL59BZSlxarO_8xXcVrGdYaaYfxfnQZXHKaj7kYQvawLDqENf1U6BfXuwwLG2P0EV-S6jCl8CS0ZXhjYA3M726DAK7Z1g_QSnpX6XW4uEgLnzT0ivrXo6d3FNbjZIfSGU8BNcXQ7D583PuNFGUfT64IL4vl7bE_xIBqVEKzODiC2pAqz_ISHqZfiVsoOS5LHiu8qBg2x8BnW1HIeCVixPiKcgPQ",
+            "type": "text"
+          },
+          {
+            "key": "",
+            "value": "",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"TransInfo\": {\n    \"VerType\": \"V04\",\n    \"MessType\": \"01\",\n    \"LocalDateTime\": \"202003210300\",\n    \"BusDate\": \"200321\",\n    \"S3MerchID\": \"72\",\n    \"RetaiLoc\": \"0000000797\",\n    \"TermID\": \"0012\",\n    \"TermTranID\": \"37987888113\",\n    \"OrderID\": \"2342322\",\n    \"APLVer\": \"0\",\n    \"CurrCde\": \"USD\",\n    \"S3CardCt\": \"01\",\n    \"S3RecMess\": \"\",\n    \"S3ProdCt\": \"001\",\n    \"S3PurAmt\": \"19.73\",\n    \"TotalTranAmt\": \"19.73\",\n    \"TotalTaxAmt\": \"0.00\",\n    \"TotalTranDisc\": \"0.00\",\n    \"S3TranID\": \"0\",\n    \"ActionCode\": \"0\",\n   \n    \"CardInfo\": [  \n      {\n        \"BarcodeData\": \"63681103500830019\",\n        \"POSDataCode\": \"11\"\n      }\n    ],\n    \"ProductInfo\": [ {\n        \"ProdCode\": \"P0000000002293\",\n        \"Depart\": \"\",\n        \"APLTypeCode\": \"0\",\n        \"OrdinalNum\": \"0001\",\n        \"PurchAmt\": \"19.73\",\n        \"NonS3DiscAmt\": \"0.00\",\n        \"TaxAmt\": \"0.00\",\n        \"QuantityType\": \"U\",\n        \"PurQuantity\": \"1\"\n      }\n    ]\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://servicedev.solutran.com/S3WebAPIServices/3/pos/process"
+      },
+      "response": []
+    },
+    {
+      "name": "Purchase Copy",
+      "_postman_id": "99f577bb-cb21-4c73-9faf-fdea1a78a52e",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "bearer WeHSf0KQVoT4FFSjedL7mheAXbbuY8d1-DEtk_DIcs8BRbsptxllUP97eerv65VmlGyEWbELUggsa2ZcfmDOkPYvQlDN3a1HQ1rRjvkGdS3L20zeRJpYGxnAenRa4wPf_yMYvFeXWGjGMI_VF3Ct9NNJO67mjCQ0CPXFIFUaiBfbolW7E5EnQFz4eiHuiq0XbqfycNQT0Yd5PYF4T_N82Dp2iS_kCJqlIqTY_aMF4jB0ozHPrFUlZzlTWmKlL59BZSlxarO_8xXcVrGdYaaYfxfnQZXHKaj7kYQvawLDqENf1U6BfXuwwLG2P0EV-S6jCl8CS0ZXhjYA3M726DAK7Z1g_QSnpX6XW4uEgLnzT0ivrXo6d3FNbjZIfSGU8BNcXQ7D583PuNFGUfT64IL4vl7bE_xIBqVEKzODiC2pAqz_ISHqZfiVsoOS5LHiu8qBg2x8BnW1HIeCVixPiKcgPQ",
+            "type": "text"
+          },
+          {
+            "key": "",
+            "value": "",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"TransInfo\": {\n    \"VerType\": \"V04\",\n    \"MessType\": \"01\",\n    \"LocalDateTime\": \"202003210300\",\n    \"BusDate\": \"200321\",\n    \"S3MerchID\": \"72\",\n    \"RetaiLoc\": \"0000000797\",\n    \"TermID\": \"0012\",\n    \"TermTranID\": \"37987888113\",\n    \"OrderID\": \"2342322\",\n    \"APLVer\": \"0\",\n    \"CurrCde\": \"USD\",\n    \"S3CardCt\": \"01\",\n    \"S3RecMess\": \"\",\n    \"S3ProdCt\": \"001\",\n    \"S3PurAmt\": \"19.73\",\n    \"TotalTranAmt\": \"19.73\",\n    \"TotalTaxAmt\": \"0.00\",\n    \"TotalTranDisc\": \"0.00\",\n    \"S3TranID\": \"0\",\n    \"ActionCode\": \"0\",\n   \n    \"CardInfo\": [  \n      {\n        \"BarcodeData\": \"63681103500830019\",\n        \"POSDataCode\": \"11\"\n      }\n    ],\n    \"ProductInfo\": [ {\n        \"ProdCode\": \"P0000000002293\",\n        \"Depart\": \"\",\n        \"APLTypeCode\": \"0\",\n        \"OrdinalNum\": \"0001\",\n        \"PurchAmt\": \"19.73\",\n        \"NonS3DiscAmt\": \"0.00\",\n        \"TaxAmt\": \"0.00\",\n        \"QuantityType\": \"U\",\n        \"PurQuantity\": \"1\"\n      }\n    ]\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://servicedev.solutran.com/S3WebAPIServices/3/pos/process"
+      },
+      "response": []
+    }
+  ]
+}
